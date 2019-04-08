@@ -1,6 +1,4 @@
 <resources>
     <string name="app_name">Contacts</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Contacts fragment</string>
+    <string name="hello_blank_fragment">!!!!!!! Contacts Detail Fragment !!!!</string>
 </resources>
