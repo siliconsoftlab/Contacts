@@ -1,9 +1,8 @@
-package tyde.com.contatcs.model
+package tyde.com.contatcs.datasource
 
 import retrofit2.Call
-import retrofit2.http.Body
 import retrofit2.http.GET
-import retrofit2.http.POST
+import tyde.com.contatcs.model.WebServiceResponse
 
 interface WebService {
 
