@@ -7,7 +7,7 @@ import retrofit2.http.POST
 
 interface WebService {
 
-    @GET("users")
+    @GET("users?per_page=10")
     fun getMatches(): Call<WebServiceResponse>
 
 
