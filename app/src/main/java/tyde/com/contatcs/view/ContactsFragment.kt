@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_contacts.*
 
@@ -29,5 +30,8 @@ class ContactsFragment : Fragment() {
         recyclerView.layoutManager=linearLayoutManager
         val adapter= ContactsAdapter(context,users,this)
         recyclerView.adapter=adapter
+        recyclerView.addItemDecoration(DividerItemDecoration(recyclerView.context, DividerItemDecoration.VERTICAL))
+
+
     }
 }
