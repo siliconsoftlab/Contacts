@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Contacts</string>
     <string name="hello_blank_fragment">!!!!!!! Contacts Detail Fragment !!!!</string>
+    <string name="profile_pic_desc">Image of a Contact</string>
 </resources>
