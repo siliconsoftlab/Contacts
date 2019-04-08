@@ -9,9 +9,9 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.recyclerview_item_row.view.*
 import tyde.com.contatcs.R
-import tyde.com.contatcs.model.UserModel
+import tyde.com.contatcs.model.Data
 
-class ContactsAdapter(val context: Context?, val users: List<UserModel>, val fragment: Fragment) :
+class ContactsAdapter(val context: Context?, val contacts: List<Data?>, val fragment: Fragment) :
     RecyclerView.Adapter<ContactsAdapter.ContactsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactsViewHolder {
@@ -20,11 +20,11 @@ class ContactsAdapter(val context: Context?, val users: List<UserModel>, val fra
     }
 
     override fun getItemCount(): Int {
-        return users.size
+        return contacts.size
     }
 
     override fun onBindViewHolder(holder: ContactsViewHolder, position: Int) {
-        val user = users[position]
+        val user = contacts[position]
         holder.setData(user, position)
     }
 
@@ -35,8 +35,8 @@ class ContactsAdapter(val context: Context?, val users: List<UserModel>, val fra
             }
         }
 
-        fun setData(user: UserModel?, position: Int) {
-            itemView.tv_user_name.text=user?.first_name
+        fun setData(contact: Data?, position: Int) {
+            itemView.tv_user_name.text=contact?.first_name
             /*itemView.nameTv.text=match!!.id
             itemView.ageTv.text=match.sex
             itemView.eduTv.text=match.email

@@ -5,7 +5,6 @@
              android:layout_height="match_parent"
              tools:context=".view.ContactsFragment" android:id="@+id/frameLayout">
 
-
     <androidx.recyclerview.widget.RecyclerView
 
             android:id="@+id/recyclerView"
