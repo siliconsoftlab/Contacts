@@ -11,7 +11,7 @@ import tyde.com.contatcs.model.WebServiceResponse
 class ContactsRepositoty {
     private val service: WebService =
         ServiceBuilder.buildService(WebService::class.java)
-    fun getContacts(filterMatches:HashMap<String,String>,users: MutableLiveData<List<Data?>>){
+    fun getContacts(users: MutableLiveData<List<Data?>>){
 
         val loginRequestCall: Call<WebServiceResponse> = service.getMatches()
 
@@ -29,11 +29,6 @@ class ContactsRepositoty {
                     users.value= response.body()?.data
                 }else {
                     Log.d("ContactsRepository","not success")
-                    val result = when (response.code()) {
-                        404 ->  "Users not found for your query "+ response.code()
-                        500 -> "Internal Server Error "+ response.code()
-                        else -> "Internal Server Error "+ response.code()
-                    }
 
                 }
             }

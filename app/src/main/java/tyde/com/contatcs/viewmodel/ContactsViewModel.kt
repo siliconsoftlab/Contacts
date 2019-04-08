@@ -11,9 +11,8 @@ class ContactsViewModel(): ViewModel() {
     private val contactsRepository= ContactsRepositoty()
 
     fun getMatches(): MutableLiveData<List<Data?>>{
-        val filterCondition= HashMap<String,String>()
         contacts =MutableLiveData<List<Data?>>()
-        contactsRepository.getContacts(filterCondition,contacts)
+        contactsRepository.getContacts(contacts)
         return contacts
     }
 }
