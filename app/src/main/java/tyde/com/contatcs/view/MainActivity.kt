@@ -1,7 +1,8 @@
-package tyde.com.contatcs
+package tyde.com.contatcs.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import tyde.com.contatcs.R
 
 class MainActivity : AppCompatActivity() {
 
