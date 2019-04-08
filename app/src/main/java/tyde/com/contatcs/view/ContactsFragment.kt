@@ -15,12 +15,11 @@ import tyde.com.contatcs.model.UserModel
 
 class ContactsFragment : Fragment() {
     private lateinit var linearLayoutManager: LinearLayoutManager
-    var users= listOf(UserModel("Saran","pic1"),UserModel("Pradeesh","pic2"))
+    var users= listOf(UserModel("1","Saravanan","Chinnadurai","pic1"),UserModel("2","Pradeesh","Jeganathan","pic2"))
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_contacts, container, false)
     }
 
@@ -28,7 +27,6 @@ class ContactsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         linearLayoutManager= LinearLayoutManager(activity)
         recyclerView.layoutManager=linearLayoutManager
-
         val adapter= ContactsAdapter(context,users,this)
         recyclerView.adapter=adapter
     }

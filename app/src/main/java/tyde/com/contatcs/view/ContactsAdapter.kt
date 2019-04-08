@@ -11,10 +11,11 @@ import kotlinx.android.synthetic.main.recyclerview_item_row.view.*
 import tyde.com.contatcs.R
 import tyde.com.contatcs.model.UserModel
 
-class ContactsAdapter(val context: Context?, val users:List<UserModel>, val fragment: Fragment): RecyclerView.Adapter<ContactsAdapter.ContactsViewHolder>(){
+class ContactsAdapter(val context: Context?, val users: List<UserModel>, val fragment: Fragment) :
+    RecyclerView.Adapter<ContactsAdapter.ContactsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactsViewHolder {
-        val view=  LayoutInflater.from(context).inflate(R.layout.recyclerview_item_row,parent,false)
+        val view = LayoutInflater.from(context).inflate(R.layout.recyclerview_item_row, parent, false)
         return ContactsViewHolder(view)
     }
 
@@ -23,19 +24,20 @@ class ContactsAdapter(val context: Context?, val users:List<UserModel>, val frag
     }
 
     override fun onBindViewHolder(holder: ContactsViewHolder, position: Int) {
-        val user=users[position]
-        holder.setData(user,position)
+        val user = users[position]
+        holder.setData(user, position)
     }
 
-    inner class ContactsViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
-init {
-itemView.setOnClickListener {
-    it.findNavController().navigate(R.id.action_contactsFragment_to_contactDetailFragment)
-}
-}
-        fun setData(user: UserModel?, position: Int) {
+    inner class ContactsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        init {
+            itemView.setOnClickListener {
+                it.findNavController().navigate(R.id.action_contactsFragment_to_contactDetailFragment)
+            }
+        }
 
-            /*itemView.nameTv.text=match!!.name
+        fun setData(user: UserModel?, position: Int) {
+            itemView.tv_user_name.text=user?.first_name
+            /*itemView.nameTv.text=match!!.id
             itemView.ageTv.text=match.sex
             itemView.eduTv.text=match.email
             Log.d("ContactsAdapter ",match.profileImage)
