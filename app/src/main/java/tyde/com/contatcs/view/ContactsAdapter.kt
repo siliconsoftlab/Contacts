@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.recyclerview_item_row.view.*
 import tyde.com.contatcs.R
 import tyde.com.contatcs.model.Data
@@ -37,17 +38,14 @@ class ContactsAdapter(val context: Context?, val contacts: List<Data?>, val frag
 
         fun setData(contact: Data?, position: Int) {
             itemView.tv_user_name.text=contact?.first_name
-            /*itemView.nameTv.text=match!!.id
-            itemView.ageTv.text=match.sex
-            itemView.eduTv.text=match.email
-            Log.d("ContactsAdapter ",match.profileImage)
+
             Picasso.with(context)
-                .load(match.profileImage)
+                .load(contact?.avatar)
                 .placeholder(R.drawable.ic_launcher_background)
                 .resize(200,200)
-                .into(itemView.circleImageView);
-            this.curmatchModel=match
-            this.position=position*/
+                .into(itemView.imgVw_user_pic);
+
+
         }
     }
 }
