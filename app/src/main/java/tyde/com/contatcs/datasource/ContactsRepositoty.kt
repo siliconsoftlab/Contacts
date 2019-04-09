@@ -13,10 +13,10 @@ class ContactsRepositoty {
         ServiceBuilder.buildService(WebService::class.java)
     fun getContacts(users: MutableLiveData<List<Data?>>){
 
-        val loginRequestCall: Call<WebServiceResponse> = service.getMatches()
+        val getContacts: Call<WebServiceResponse> = service.getContacts()
 
 
-        loginRequestCall.enqueue(object : Callback<WebServiceResponse>{
+        getContacts.enqueue(object : Callback<WebServiceResponse>{
             override fun onFailure(call: Call<WebServiceResponse>, t: Throwable) {
                 Log.e("ContactsRepository", "" + " App could not get data: More Info "+t.printStackTrace())
             }
@@ -34,5 +34,26 @@ class ContactsRepositoty {
             }
         })
     }
+    fun updateContacts(data: Data){
 
+        val updateReq: Call<WebServiceResponse> = service.updateContact(data.id.toString(),data)
+
+        updateReq.enqueue(object : Callback<WebServiceResponse>{
+            override fun onFailure(call: Call<WebServiceResponse>, t: Throwable) {
+                Log.e("ContactsRepository", "" + " App could not get data: More Info "+t.printStackTrace())
+            }
+
+            override fun onResponse(call: Call<WebServiceResponse>, response: Response<WebServiceResponse>) {
+                if(response.isSuccessful){
+                    val res: WebServiceResponse = response.body()!!
+                    Log.d("ContactsRepository", "" + " $$$$$$$$$$$$$$ success "+response.body())
+                    Log.d("ContactsRepository",""+res.toString())
+                    //users.value= response.body()?.data
+                }else {
+                    Log.d("ContactsRepository","not success")
+
+                }
+            }
+        })
+    }
 }

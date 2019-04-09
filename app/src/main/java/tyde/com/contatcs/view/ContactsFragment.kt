@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_contacts.*
@@ -38,10 +39,8 @@ class ContactsFragment : Fragment() {
             val adapter= ContactsAdapter(context,contacts,this)
             recyclerView.adapter=adapter
             recyclerView.addItemDecoration(DividerItemDecoration(recyclerView.context, DividerItemDecoration.VERTICAL))
-
         })
 
-
-
+        tv_add_contact.setOnClickListener { it.findNavController().navigate(R.id.action_contactsFragment_to_editContactFragment) }
     }
 }

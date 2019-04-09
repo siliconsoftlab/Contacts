@@ -25,4 +25,10 @@ class ContactsViewModel(): ViewModel() {
         }
         this.contact.value=data
     }
+
+    fun updateContact(data:Data): MutableLiveData<Data?>{
+        contact =MutableLiveData<Data?>()
+        contactsRepository.updateContacts(data)
+        return contact
+    }
 }
