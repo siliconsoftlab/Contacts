@@ -14,4 +14,8 @@
     <string name="contact_id">Contact ID</string>
     <string name="no">+91 989898</string>
     <string name="desc">Desc</string>
+    <string name="cancel">Cancel</string>
+    <string name="done">Done</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
 </resources>
