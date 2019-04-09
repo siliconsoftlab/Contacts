@@ -42,7 +42,10 @@ class EditContactFragment : Fragment() {
             contactsViewModel.updateContact(data!!).observe(this, Observer<Data?> { contact->
 
                 Toast.makeText(context,"  ********** ",Toast.LENGTH_LONG).show()
+
             })
+
+            it.findNavController().navigate(R.id.action_editContactFragment_to_contactsFragment)
         }
         tv_cancel.setOnClickListener {
             it.findNavController().popBackStack()

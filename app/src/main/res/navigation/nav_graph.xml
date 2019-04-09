@@ -17,5 +17,10 @@
                 app:destination="@id/editContactFragment"/>
     </fragment>
     <fragment android:id="@+id/editContactFragment" android:name="tyde.com.contatcs.view.EditContactFragment"
-              android:label="fragment_edit_contact" tools:layout="@layout/fragment_edit_contact"/>
+              android:label="fragment_edit_contact" tools:layout="@layout/fragment_edit_contact">
+        <action android:id="@+id/action_editContactFragment_to_contactsFragment"
+                app:popUpTo="@+id/contactsFragment"
+                app:popUpToInclusive="true"
+                app:destination="@id/contactsFragment"/>
+    </fragment>
 </navigation>
